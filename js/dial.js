@@ -24,7 +24,7 @@
   const HUB_RADIUS = 10;
   const HUB_INNER_RADIUS = 4;
 
-  // Must match the .dial-needle transition in styles.css so the number and needle land together.
+  // Must match --dial-transition in styles.css so number, needle and band land together.
   const ANIMATION_MS = 1600;
 
   const svg = document.getElementById("score-dial");
@@ -74,10 +74,29 @@
     }
   }
 
+  // The coloured band is dashed with pathLength = MAX_SCORE, so a dash offset of
+  // (MAX_SCORE - score) fills it exactly up to the score.
   function drawArc() {
     const endDeg = START_DEG + SWEEP_DEG;
     el("path", { class: "dial-track", d: arcPath(ARC_RADIUS, START_DEG, endDeg), "stroke-width": ARC_WIDTH + 6 }, svg);
-    el("path", { class: "dial-band", d: arcPath(ARC_RADIUS, START_DEG, endDeg), "stroke-width": ARC_WIDTH }, svg);
+    const band = el("path", {
+      class: "dial-band",
+      d: arcPath(ARC_RADIUS, START_DEG, endDeg),
+      "stroke-width": ARC_WIDTH,
+      pathLength: MAX_SCORE,
+      "stroke-dasharray": `${MAX_SCORE} ${MAX_SCORE}`,
+    }, svg);
+    band.style.strokeDashoffset = bandOffset(0);
+    return band;
+  }
+
+  // The round line cap sticks out half the band width past the dash end, which would
+  // make the colour run ahead of the needle. Pull the end back by that much, easing
+  // the correction to zero at MAX_SCORE so a full score still fills the whole arc.
+  function bandOffset(score) {
+    const arcLength = ARC_RADIUS * (SWEEP_DEG * Math.PI) / 180;
+    const capInScoreUnits = (ARC_WIDTH / 2 / arcLength) * MAX_SCORE;
+    return (MAX_SCORE - score) * (1 + capInScoreUnits / MAX_SCORE);
   }
 
   function drawTicks() {
@@ -125,10 +144,11 @@
     return 1 - Math.pow(1 - t, 3);
   }
 
-  function animateTo(score, needle, valueText) {
-    // Wait one frame so the starting rotation is painted before the transition kicks in.
+  function animateTo(score, needle, band, valueText) {
+    // Wait one frame so the starting state is painted before the transitions kick in.
     requestAnimationFrame(() => {
       needle.style.transform = `rotate(${scoreToDeg(score)}deg)`;
+      band.style.strokeDashoffset = bandOffset(score);
       const startTime = performance.now();
       function tick(now) {
         const t = Math.min((now - startTime) / ANIMATION_MS, 1);
@@ -140,12 +160,12 @@
   }
 
   drawGradient();
-  drawArc();
+  const band = drawArc();
   drawTicks();
   const valueText = drawValueText();
   const needle = drawNeedle();
 
   const score = Math.floor(Math.random() * (MAX_SCORE + 1));
   svg.setAttribute("aria-label", `Score ${score} of ${MAX_SCORE}`);
-  animateTo(score, needle, valueText);
+  animateTo(score, needle, band, valueText);
 })();

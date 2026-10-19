@@ -12,6 +12,7 @@ Open ideas, loose ends and known limitations in the prototype. Tick off or delet
 - [ ] User icon: build profile page.
 
 ## Score dial
+- [ ] Respect iOS "Reduce Motion" (`prefers-reduced-motion`): show needle, band and number at the final value without animating.
 - [ ] Needle passes over tick labels (e.g. "300") when pointing at them. Normal for a speedometer, but labels could move outside the arc if it bothers anyone.
 
 ## Boost your score (tips)

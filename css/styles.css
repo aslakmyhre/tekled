@@ -8,6 +8,8 @@
   --score-low: #e5484d;
   --score-mid: #f5b400;
   --score-high: #30a46c;
+  /* Shared by needle and band; duration must match ANIMATION_MS in dial.js */
+  --dial-transition: 1.6s cubic-bezier(0.33, 1, 0.68, 1);
   --chart-accent: #2a78d6;
   --chart-muted: #86b6ef;
   --chart-baseline: #e3e5ec;
@@ -118,6 +120,7 @@ body {
   fill: none;
   stroke: url(#dial-gradient);
   stroke-linecap: round;
+  transition: stroke-dashoffset var(--dial-transition);
 }
 
 .dial-tick {
@@ -140,7 +143,7 @@ body {
 .dial-needle {
   fill: var(--text);
   transform-box: view-box;
-  transition: transform 1.6s cubic-bezier(0.33, 1, 0.68, 1);
+  transition: transform var(--dial-transition);
 }
 
 .dial-hub {
