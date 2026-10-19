@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Score</title>
+
+  <meta name="theme-color" content="#f5f6fa">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="Score">
+  <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+  <link rel="icon" href="icons/icon.svg" type="image/svg+xml">
+  <link rel="manifest" href="manifest.webmanifest">
+
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="js/nav.js" defer></script>
+  <script src="js/dial.js" defer></script>
+  <script src="js/metrics-data.js" defer></script>
+  <script src="js/metrics.js" defer></script>
+</head>
+<body>
+  <header id="app-nav"></header>
+
+  <main class="page">
+    <section class="dial-card" aria-label="Your score">
+      <svg id="score-dial" class="dial" viewBox="0 0 300 250" role="img" aria-labelledby="score-dial-label"></svg>
+      <p id="score-dial-label" class="dial-caption">Your score</p>
+    </section>
+
+    <section class="metrics" aria-labelledby="metrics-title">
+      <h2 id="metrics-title" class="section-title">Last 7 days</h2>
+      <div id="metrics-grid" class="metrics-grid"></div>
+    </section>
+  </main>
+</body>
+</html>

@@ -1,0 +1,78 @@
+// Fake health data for the prototype. In the real app this would come from the
+// phone (Screen Time, motion) and the watch (sleep, heart, mindfulness, daylight).
+// `days` is oldest → newest, the last entry is today.
+// `prevAvg` is the daily average of the 7 days before, used for the "vs last week" delta.
+const HEALTH_METRICS = [
+  {
+    label: "Screen time",
+    source: "Phone",
+    chart: "bar",
+    format: "duration",
+    higherIsBetter: false,
+    days: [3.8, 4.6, 5.1, 4.2, 3.5, 6.2, 4.4],
+    prevAvg: 5.0,
+  },
+  {
+    label: "Sleep",
+    source: "Watch",
+    chart: "bar",
+    format: "duration",
+    higherIsBetter: true,
+    days: [7.2, 6.5, 7.8, 6.9, 7.4, 8.3, 7.1],
+    prevAvg: 6.8,
+  },
+  {
+    label: "Steps",
+    source: "Phone",
+    chart: "bar",
+    format: "count",
+    higherIsBetter: true,
+    days: [8432, 10211, 6540, 9120, 12034, 4510, 7880],
+    prevAvg: 8100,
+  },
+  {
+    label: "Resting pulse",
+    source: "Watch",
+    chart: "line",
+    format: "bpm",
+    higherIsBetter: false,
+    days: [58, 57, 59, 56, 57, 60, 56],
+    prevAvg: 59,
+  },
+  {
+    label: "HRV",
+    source: "Watch",
+    chart: "line",
+    format: "ms",
+    higherIsBetter: true,
+    days: [44, 48, 41, 50, 47, 39, 52],
+    prevAvg: 43,
+  },
+  {
+    label: "Exercise",
+    source: "Watch",
+    chart: "bar",
+    format: "minutes",
+    higherIsBetter: true,
+    days: [32, 45, 12, 38, 60, 0, 28],
+    prevAvg: 35,
+  },
+  {
+    label: "Mindfulness",
+    source: "Watch",
+    chart: "bar",
+    format: "minutes",
+    higherIsBetter: true,
+    days: [10, 0, 5, 10, 15, 0, 10],
+    prevAvg: 6,
+  },
+  {
+    label: "Time in daylight",
+    source: "Watch",
+    chart: "bar",
+    format: "minutes",
+    higherIsBetter: true,
+    days: [45, 62, 20, 38, 95, 120, 40],
+    prevAvg: 55,
+  },
+];
