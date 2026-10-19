@@ -17,6 +17,8 @@
   <link rel="stylesheet" href="css/styles.css">
   <script src="js/nav.js" defer></script>
   <script src="js/dial.js" defer></script>
+  <script src="js/tips-data.js" defer></script>
+  <script src="js/tips.js" defer></script>
   <script src="js/metrics-data.js" defer></script>
   <script src="js/metrics.js" defer></script>
 </head>
@@ -27,6 +29,11 @@
     <section class="dial-card" aria-label="Your score">
       <svg id="score-dial" class="dial" viewBox="0 0 300 250" role="img" aria-labelledby="score-dial-label"></svg>
       <p id="score-dial-label" class="dial-caption">Your score</p>
+    </section>
+
+    <section class="tips" aria-labelledby="tips-title">
+      <h2 id="tips-title" class="section-title">Boost your score</h2>
+      <div id="tips-row" class="tips-row"></div>
     </section>
 
     <section class="metrics" aria-labelledby="metrics-title">
