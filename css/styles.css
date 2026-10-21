@@ -557,6 +557,7 @@ html:has(.sheet[open]) {
   color: var(--text-muted);
   font-size: 13px;
   font-weight: 700;
+  text-transform: uppercase;
 }
 
 .is-user .leaderboard-avatar {
