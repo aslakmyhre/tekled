@@ -21,12 +21,24 @@
   <script src="js/tips.js" defer></script>
   <script src="js/metrics-data.js" defer></script>
   <script src="js/metrics.js" defer></script>
+  <script src="js/leaderboard-data.js" defer></script>
+  <script src="js/leaderboard.js" defer></script>
 </head>
 <body>
   <header id="app-nav"></header>
 
   <main class="page">
     <section class="dial-card" aria-label="Your score">
+      <div class="dial-card-head">
+        <button id="leaderboard-open" class="pill-button" type="button" aria-haspopup="dialog">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+               stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M8 21h8M12 17v4M7 4h10v5a5 5 0 0 1-10 0z"/>
+            <path d="M7 6H4v1a3 3 0 0 0 3 3M17 6h3v1a3 3 0 0 1-3 3"/>
+          </svg>
+          Leaderboard
+        </button>
+      </div>
       <svg id="score-dial" class="dial" viewBox="0 0 300 250" role="img" aria-labelledby="score-dial-label"></svg>
       <p id="score-dial-label" class="dial-caption">Your score</p>
     </section>
@@ -41,5 +53,19 @@
       <div id="metrics-grid" class="metrics-grid"></div>
     </section>
   </main>
+
+  <dialog id="leaderboard" class="sheet" aria-labelledby="leaderboard-title">
+    <div class="sheet-body">
+      <div class="sheet-head">
+        <h2 id="leaderboard-title" class="section-title">Leaderboard</h2>
+        <button id="leaderboard-close" class="nav-button" type="button" aria-label="Close">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+            <path d="M6 6l12 12M18 6L6 18"/>
+          </svg>
+        </button>
+      </div>
+      <ol id="leaderboard-list" class="leaderboard-list"></ol>
+    </div>
+  </dialog>
 </body>
 </html>

@@ -17,6 +17,10 @@
   --delta-bad: #d03b3b;
   --accent-wash: #e8f1fc;
   --gain-wash: #e6f4ea;
+  --medal-gold: #b07d00;
+  --medal-silver: #7d828f;
+  --medal-bronze: #a5612b;
+  --backdrop: rgba(28, 29, 34, 0.4);
   --nav-height: 56px;
   --radius: 20px;
   --shadow: 0 4px 20px rgba(28, 29, 34, 0.06);
@@ -102,6 +106,38 @@ body {
   border-radius: var(--radius);
   box-shadow: var(--shadow);
   text-align: center;
+}
+
+.dial-card-head {
+  display: flex;
+  justify-content: flex-end;
+  margin: -12px -4px 4px;
+}
+
+.pill-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 36px;
+  padding: 0 14px 0 12px;
+  border: none;
+  border-radius: 999px;
+  background: var(--accent-wash);
+  color: var(--chart-accent);
+  font: inherit;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  touch-action: manipulation;
+}
+
+.pill-button:active {
+  filter: brightness(0.95);
+}
+
+.pill-button svg {
+  width: 18px;
+  height: 18px;
 }
 
 .dial {
@@ -407,4 +443,138 @@ body {
   white-space: nowrap;
   pointer-events: none;
   transform: translateX(-50%);
+}
+
+/* ---------- Bottom sheet ---------- */
+
+html:has(.sheet[open]) {
+  overflow: hidden;
+}
+
+.sheet {
+  width: 100%;
+  max-width: 420px;
+  max-height: 85dvh;
+  margin: auto auto 0;
+  padding: 0;
+  border: none;
+  border-radius: var(--radius) var(--radius) 0 0;
+  background: var(--surface);
+  color: var(--text);
+}
+
+.sheet[open] {
+  display: flex;
+  animation: sheet-up 0.3s cubic-bezier(0.33, 1, 0.68, 1);
+}
+
+.sheet::backdrop {
+  background: var(--backdrop);
+}
+
+@keyframes sheet-up {
+  from {
+    transform: translateY(100%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sheet[open] {
+    animation: none;
+  }
+}
+
+.sheet-body {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  min-height: 0;
+  padding: 8px 12px calc(12px + env(safe-area-inset-bottom));
+}
+
+.sheet-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-left: 8px;
+}
+
+.sheet-head .section-title {
+  margin: 0;
+}
+
+/* ---------- Leaderboard ---------- */
+
+.leaderboard-list {
+  margin: 4px 0 0;
+  padding: 0;
+  overflow-y: auto;
+  list-style: none;
+}
+
+.leaderboard-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 8px;
+  border-radius: 14px;
+}
+
+.leaderboard-row.is-user {
+  background: var(--accent-wash);
+}
+
+.leaderboard-rank {
+  flex-shrink: 0;
+  width: 24px;
+  color: var(--text-muted);
+  font-size: 15px;
+  font-weight: 700;
+  text-align: center;
+  font-variant-numeric: tabular-nums;
+}
+
+.leaderboard-rank[data-rank="1"] {
+  color: var(--medal-gold);
+}
+
+.leaderboard-rank[data-rank="2"] {
+  color: var(--medal-silver);
+}
+
+.leaderboard-rank[data-rank="3"] {
+  color: var(--medal-bronze);
+}
+
+.leaderboard-avatar {
+  display: grid;
+  flex-shrink: 0;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--track);
+  color: var(--text-muted);
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.is-user .leaderboard-avatar {
+  background: var(--chart-accent);
+  color: var(--surface);
+}
+
+.leaderboard-name {
+  flex: 1;
+  overflow: hidden;
+  font-size: 16px;
+  font-weight: 600;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.leaderboard-score {
+  font-size: 16px;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
 }

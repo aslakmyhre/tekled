@@ -22,3 +22,9 @@ Open ideas, loose ends and known limitations in the prototype. Tick off or delet
 ## Last 7 days (metrics)
 - [ ] Tapping a card does nothing. Could open a detail page per metric (longer history, explanation of why it matters).
 - [ ] Chart tooltip covers the "vs last week" line while shown. Fine as a temporary overlay; could sit above the card instead.
+
+## Leaderboard
+- [ ] People and scores are fixed fictional data (`js/leaderboard-data.js`). Only "You" changes, from the random dial score.
+- [ ] Sheet closes via ✕, backdrop tap or Esc, but not by swiping down like a native iOS sheet.
+- [ ] Rank 2 ("silver") is only slightly lighter than the other grey ranks. Could use medal badges if top 3 should stand out more.
+- [ ] Tapping a person does nothing. Could open a profile or compare page.

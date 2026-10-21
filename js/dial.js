@@ -167,5 +167,7 @@
 
   const score = Math.floor(Math.random() * (MAX_SCORE + 1));
   svg.setAttribute("aria-label", `Score ${score} of ${MAX_SCORE}`);
+  // Read by leaderboard.js to rank the user.
+  svg.dataset.score = score;
   animateTo(score, needle, band, valueText);
 })();
