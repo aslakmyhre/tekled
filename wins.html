@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Your wins · Score</title>
+
+  <meta name="theme-color" content="#f5f6fa">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="Score">
+  <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+  <link rel="icon" href="icons/icon.svg" type="image/svg+xml">
+  <link rel="manifest" href="manifest.webmanifest">
+
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="js/nav.js" defer></script>
+</head>
+<body>
+  <header id="app-nav"></header>
+
+  <!-- Prototype only: every number on this page is static, made-up data for screenshots. -->
+  <main class="page wins">
+    <section class="wins-intro">
+      <p class="wins-eyebrow">October</p>
+      <h1 class="wins-title">Your wins this month</h1>
+      <p class="wins-lead">Small changes add up. Here's everything you've achieved so far. Nice work!</p>
+    </section>
+
+    <section class="wins-hero" aria-label="Time saved">
+      <p class="wins-hero-label">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <circle cx="12" cy="13" r="8"/><path d="M12 9v4l2.5 2.5M10 2h4"/>
+        </svg>
+        Time saved
+      </p>
+      <p class="wins-hero-value">14h 20m</p>
+      <p class="wins-hero-sub">less screen time than in September</p>
+      <p class="wins-hero-equiv-title">That's enough time for</p>
+      <ul class="wins-hero-equiv">
+        <li>3 books</li>
+        <li>7 movies</li>
+        <li>28 long walks</li>
+      </ul>
+    </section>
+
+    <section class="wins-card" aria-labelledby="weekly-title">
+      <h2 id="weekly-title" class="wins-card-title">Time saved per week</h2>
+      <p class="wins-card-sub">Every week better than the last</p>
+      <svg class="wins-chart" viewBox="0 0 300 124" role="img"
+           aria-label="Time saved per week: week 1 2h 40m, week 2 3h 15m, week 3 4h 5m, this week 4h 20m">
+        <line class="metric-baseline" x1="0" x2="300" y1="104" y2="104"/>
+        <path class="metric-bar" d="M23.5 104V57.5Q23.5 53.5 27.5 53.5H47.5Q51.5 53.5 51.5 57.5V104Z"/>
+        <path class="metric-bar" d="M98.5 104V46.5Q98.5 42.5 102.5 42.5H122.5Q126.5 42.5 126.5 46.5V104Z"/>
+        <path class="metric-bar" d="M173.5 104V30.7Q173.5 26.7 177.5 26.7H197.5Q201.5 26.7 201.5 30.7V104Z"/>
+        <path class="metric-bar metric-bar--today" d="M248.5 104V26Q248.5 22 252.5 22H272.5Q276.5 22 276.5 26V104Z"/>
+        <text class="wins-chart-value" x="37.5" y="47">2h 40m</text>
+        <text class="wins-chart-value" x="112.5" y="36">3h 15m</text>
+        <text class="wins-chart-value" x="187.5" y="20.2">4h 5m</text>
+        <text class="wins-chart-value wins-chart-value--current" x="262.5" y="15.5">4h 20m</text>
+        <text class="wins-chart-label" x="37.5" y="121">Week 1</text>
+        <text class="wins-chart-label" x="112.5" y="121">Week 2</text>
+        <text class="wins-chart-label" x="187.5" y="121">Week 3</text>
+        <text class="wins-chart-label wins-chart-label--current" x="262.5" y="121">This week</text>
+      </svg>
+    </section>
+
+    <section class="wins-streak" aria-label="Streak">
+      <div class="wins-streak-head">
+        <span class="wins-streak-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M12 3c1 3.5 5 5.5 5 10a5 5 0 0 1-10 0c0-2.5 1.5-4 2.5-5 .3 1.7 1 2.7 2 3 0-3-.5-5.5.5-8z"/>
+          </svg>
+        </span>
+        <div>
+          <p class="wins-streak-value">9-day streak</p>
+          <p class="wins-streak-sub">Under 4 hours of screen time every day. Your best streak yet!</p>
+        </div>
+      </div>
+      <ol class="wins-streak-days" aria-label="Last 7 days, all goals met">
+        <li><span class="wins-check"></span>M</li>
+        <li><span class="wins-check"></span>T</li>
+        <li><span class="wins-check"></span>W</li>
+        <li><span class="wins-check"></span>T</li>
+        <li><span class="wins-check"></span>F</li>
+        <li><span class="wins-check"></span>S</li>
+        <li class="is-today"><span class="wins-check"></span>S</li>
+      </ol>
+    </section>
+
+    <section class="wins-section" aria-labelledby="highlights-title">
+      <h2 id="highlights-title" class="section-title">Highlights</h2>
+      <div class="wins-grid">
+        <article class="win-stat">
+          <span class="tip-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="7" y="3" width="10" height="18" rx="2"/><path d="M11 18h2"/></svg></span>
+          <p class="win-stat-value">−18%</p>
+          <p class="win-stat-text">screen time vs. September</p>
+        </article>
+        <article class="win-stat">
+          <span class="tip-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 14.5A8 8 0 1 1 9.5 4a6.5 6.5 0 0 0 10.5 10.5z"/></svg></span>
+          <p class="win-stat-value">+6h 30m</p>
+          <p class="win-stat-text">more sleep this month</p>
+        </article>
+        <article class="win-stat">
+          <span class="tip-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><ellipse cx="8" cy="8.5" rx="3.2" ry="5.5"/><ellipse cx="16" cy="15.5" rx="3.2" ry="5.5"/></svg></span>
+          <p class="win-stat-value">248,310</p>
+          <p class="win-stat-text">steps, about Oslo to Lillehammer</p>
+        </article>
+        <article class="win-stat">
+          <span class="tip-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v3M5.6 8.6l1.4 1.4M18.4 8.6L17 10M3 16h18M7 16a5 5 0 0 1 10 0M6 20h12"/></svg></span>
+          <p class="win-stat-value">12</p>
+          <p class="win-stat-text">phone-free mornings</p>
+        </article>
+        <article class="win-stat">
+          <span class="tip-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 7v10M17 7v10M4 10v4M20 10v4M7 12h10"/></svg></span>
+          <p class="win-stat-value">14</p>
+          <p class="win-stat-text">workouts completed</p>
+        </article>
+        <article class="win-stat">
+          <span class="tip-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg></span>
+          <p class="win-stat-value">21h</p>
+          <p class="win-stat-text">outside in daylight</p>
+        </article>
+        <article class="win-stat">
+          <span class="tip-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3"/><circle cx="12" cy="12" r="8"/></svg></span>
+          <p class="win-stat-value">2h 10m</p>
+          <p class="win-stat-text">of mindfulness</p>
+        </article>
+        <article class="win-stat">
+          <span class="tip-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 17l6-6 4 4 8-8M15 7h6v6"/></svg></span>
+          <p class="win-stat-value">+124</p>
+          <p class="win-stat-text">score points since October 1</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="wins-section" aria-labelledby="badges-title">
+      <h2 id="badges-title" class="section-title">Badges earned</h2>
+      <div class="badges-grid">
+        <article class="badge badge--gold">
+          <span class="badge-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v3M5.6 8.6l1.4 1.4M18.4 8.6L17 10M3 16h18M7 16a5 5 0 0 1 10 0M6 20h12"/></svg></span>
+          <p class="badge-name">Early bird</p>
+          <p class="badge-text">5 nights in bed before 23:00</p>
+        </article>
+        <article class="badge badge--blue">
+          <span class="badge-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 2v5M15 2v5M6 7h12v3a6 6 0 0 1-12 0zM12 16v6"/></svg></span>
+          <p class="badge-name">Unplugged</p>
+          <p class="badge-text">3 hours phone-free</p>
+        </article>
+        <article class="badge badge--green">
+          <span class="badge-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><ellipse cx="8" cy="8.5" rx="3.2" ry="5.5"/><ellipse cx="16" cy="15.5" rx="3.2" ry="5.5"/></svg></span>
+          <p class="badge-name">Step master</p>
+          <p class="badge-text">10,000 steps 7 days in a row</p>
+        </article>
+        <article class="badge badge--gold">
+          <span class="badge-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 21h8M12 17v4M7 4h10v5a5 5 0 0 1-10 0z"/><path d="M7 6H4v1a3 3 0 0 0 3 3M17 6h3v1a3 3 0 0 1-3 3"/></svg></span>
+          <p class="badge-name">Top 30%</p>
+          <p class="badge-text">On the leaderboard this week</p>
+        </article>
+        <article class="badge badge--green">
+          <span class="badge-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3"/><circle cx="12" cy="12" r="8"/></svg></span>
+          <p class="badge-name">Zen mode</p>
+          <p class="badge-text">Mindful 5 days in a row</p>
+        </article>
+        <article class="badge badge--locked">
+          <span class="badge-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg></span>
+          <p class="badge-name">Marathon month</p>
+          <p class="badge-text">4 days to go</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="wins-note" aria-label="Keep going">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M12 3l2.6 5.3 5.9.9-4.3 4.1 1 5.8L12 16.4 6.8 19.1l1-5.8-4.3-4.1 5.9-.9z"/>
+      </svg>
+      <div>
+        <p class="wins-note-title">You're on a roll!</p>
+        <p class="wins-note-text">You improved more than 70% of people this month. Keep going, your future self will thank you.</p>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

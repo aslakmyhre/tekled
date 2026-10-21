@@ -8,7 +8,9 @@ Open ideas, loose ends and known limitations in the prototype. Tick off or delet
 - [ ] Test on a real iPhone via "Add to Home Screen". So far only checked in headless Chrome at 390px.
 
 ## Navbar
-- [ ] Hamburger menu: decide contents and build the slide-out menu.
+- [x] Hamburger menu: decide contents and build the slide-out menu.
+- [ ] Menu: only Home and Your wins go anywhere. Leaderboard, Goals, Friends, Insights and Settings are visual only.
+- [ ] Menu header ("Hi there!", "Member since August") is placeholder text.
 - [ ] User icon: build profile page.
 
 ## Score dial
@@ -28,3 +30,8 @@ Open ideas, loose ends and known limitations in the prototype. Tick off or delet
 - [ ] Sheet closes via ✕, backdrop tap or Esc, but not by swiping down like a native iOS sheet.
 - [ ] Rank 2 ("silver") is only slightly lighter than the other grey ranks. Could use medal badges if top 3 should stand out more.
 - [ ] Tapping a person does nothing. Could open a profile or compare page.
+
+## Your wins
+- [ ] All numbers on `wins.html` are static and made up, and don't match the random home score or the 7-day metrics. Fine for screenshots, but they'd need to agree if the app showed both in one shot.
+- [ ] Month is hardcoded to "October" (and "vs. September").
+- [ ] Weekly chart is hand-drawn static SVG with no tap tooltip, unlike the metric cards.
